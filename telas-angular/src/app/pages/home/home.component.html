@@ -1,1 +1,41 @@
-<p>home works!</p>
+
+  <div class="infos">
+    <div class="left">
+      <img src="/assets/images/Logo.jpg" alt="">
+    </div>
+    <div class="right">
+      <h1>Pizzaria Dom Grudento</h1>
+    <span>(11)9 7070-7070</span>
+    </div> 
+  </div>
+  <div class="background">  
+    <h1>Pizzas</h1>
+  
+    <div *ngFor="let produto of produtosPizza">
+      <a routerLink="produto/{{produto.idProduto}}">
+        <app-card 
+          idProduto = {{produto.idProduto}}
+          imagem = {{produto.imagem}}
+          produto = {{produto.produto}}
+          descricao = {{produto.descricao}}
+          preco = {{produto.preco}}>
+        </app-card>
+      </a>
+        
+
+    </div>
+    <h1>Bebidas</h1>
+    <div *ngFor="let produto of produtosBebidas">
+      <a routerLink="produto/{{produto.idProduto}}">
+        <app-card 
+          idProduto="{{produto.idProduto}}"
+          imagem="{{produto.imagem}}"
+          produto="{{produto.produto}}"
+          descricao="{{produto.descricao}}"
+          preco="{{produto.preco}}">
+        </app-card>
+      </a>
+    </div>
+  </div>
+ 
+  <app-shop-card></app-shop-card>

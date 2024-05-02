@@ -1,0 +1,89 @@
+@import "../../../../assets/colors/colors.scss";
+
+:host{
+    display: flex;
+    width: 700px;
+    height: 150px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: solid 1px $cor-secundaria;
+    overflow: hidden;
+    background-color: rgb(40, 38, 39);
+    font-weight: bold;
+    .left-card{
+        height: 150px;
+        
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .right-card{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        .produto{
+            padding-left: 15px;
+            font-size: 1.8rem;
+        }
+        .descricao{
+            font-size: 1.2rem;
+            margin: auto 0 0 0 ;
+            padding-left: 15px;
+            text-overflow: ellipsis;
+        }
+        .preco{
+            display: flex;
+            margin: auto 0 0 auto ;
+            font-size: 1.2rem;
+            padding-right: 10px;
+        }
+        button{
+            
+            width: 100%;
+            margin: auto 0 0 auto ;
+            background-color: $cor-secundaria;
+            font-weight: bold;
+            
+            -webkit-box-shadow: -2px -18px 23px -3px rgba(0,0,0,0.75);
+            -moz-box-shadow: -2px -18px 23px -3px rgba(0,0,0,0.75);
+            box-shadow: -2px -18px 23px -3px rgba(0,0,0,0.75);
+        }
+        button:hover {
+            cursor: pointer;
+        }
+        button:active {
+            position: relative;
+            top: 1px;
+        }
+    }
+    @media (max-width: 768px) {
+        width: 350px;
+        height: 130px;
+        .left-card{
+            
+            width: 35%;
+            img{
+                height: 90%;
+            }
+        }
+        .right-card{
+            .produto{
+                font-size: 1.4rem;
+                padding-top: 5px;
+                padding-left: 15px;
+            }
+            .descricao{
+                font-size: 1rem;
+                width: 100%;
+                white-space: nowrap;
+                overflow: hidden; 
+                text-overflow: ellipsis; 
+            }
+            .preco{
+                font-size: 1rem;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+        }
+    }
+}

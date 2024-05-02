@@ -24,7 +24,7 @@ export class ProdutosService {
     }
     
     GetProdutoNome(produto: string) {
-      const url = this.apiUrl + `/BuscarProdutosPor/${produto}`;
+      const url = this.apiUrl + `/BuscarProdutosPorNome/${produto}`;
       return this.http.get<Produtos[]>(url)
     }
     
