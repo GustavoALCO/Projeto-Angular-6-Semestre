@@ -1,0 +1,42 @@
+@import '../../../assets/colors/colors.scss';
+
+:host{
+    
+    .infos{
+        
+        display: flex;
+        align-items: center;
+        top: 0;
+        background-color: $cor-primaria;
+        width: 100%;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        .left{
+            img{
+                height: 100%;
+                width: 100px;
+                object-fit: cover;
+                border-bottom-left-radius: 20px;
+            }
+        }
+        .right{
+            h1{
+                margin-left: 20px;
+                color: $cor-secundaria;
+                text-shadow: 2px 2px black; 
+            }
+            span{
+                margin-left: 20px;
+                
+            }
+        }
+        
+    }
+}
+
+@media (max-width: 400px)  {
+           
+    .infos{
+        width: 100%;
+    }
+}

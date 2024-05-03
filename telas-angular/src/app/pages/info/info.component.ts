@@ -3,22 +3,24 @@ import { ActivatedRoute } from '@angular/router';
 import { Produtos } from '../../models/Produtos';
 import { ProdutosService } from '../../services/produtos.service';
 import { CommonModule } from '@angular/common';
-import { log } from 'console';
-import { ShopCardComponent } from '../shop-card/shop-card.component';
+import {LocalStorageService} from '../../services/localstorage.service'
+import { HeaderComponent } from '../header/header.component';
+import { CardShopComponent } from '../card-shop/card-shop.component';
+
 
 @Component({
   selector: 'app-info',
   standalone: true,
-  imports: [CommonModule, ShopCardComponent],
+  imports: [CommonModule, HeaderComponent, CardShopComponent],
   templateUrl: './info.component.html',
-  styleUrl: './info.component.scss'
+  styleUrl: './info.component.scss',
 })
 export class InfoComponent implements OnInit {
   id:string = '';
 
   produtos:Produtos[] = [];
 
-  constructor(private route: ActivatedRoute, private ProdutosService: ProdutosService) 
+  constructor(private route: ActivatedRoute, private ProdutosService: ProdutosService, private LocalStorageService: LocalStorageService) 
   {
 
   }
@@ -26,8 +28,8 @@ export class InfoComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.id = params['idProduto'];
-      // Agora você pode usar this.id para acessar o valor do parâmetro id
       this.obterProduto()
+      //usa o parametro que foi passado na url para buscar o objeto
     })
   }
 
@@ -38,6 +40,11 @@ export class InfoComponent implements OnInit {
       this.produtos = produtos;
     });
   };
+
+  adicionarId(id: string){
+    this.LocalStorageService.adicionarId(id);
+  }
+  
 }
 
 

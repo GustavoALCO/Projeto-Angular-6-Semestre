@@ -3,14 +3,15 @@ import { ProdutosService } from '../../services/produtos.service';
 import { Produtos } from '../../models/Produtos';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './card/card.component';
-import { ShopCardComponent } from '../shop-card/shop-card.component';
 import { RouterLink } from '@angular/router';
+import { HeaderComponent } from '../header/header.component';
+import { CardShopComponent } from '../card-shop/card-shop.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, CardComponent, ShopCardComponent, RouterLink],
+  imports: [CommonModule, CardComponent, RouterLink, HeaderComponent, CardShopComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -30,7 +31,7 @@ export class HomeComponent implements OnInit{
   }
 
   obterPizzas(){
-  this.ProdutosService.GetProdutoNome("Excluir")
+  this.ProdutosService.GetProdutoNome("excluir")
   .subscribe(produtosPizza => this.produtosPizza = produtosPizza);
   }
 
