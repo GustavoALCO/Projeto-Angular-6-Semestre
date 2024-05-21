@@ -3,7 +3,9 @@
 :host{
     
     .infos{
-        
+        padding-left: 15px;
+        padding-right: 15px;
+        border: 2px solid $cor-secundaria;
         display: flex;
         align-items: center;
         top: 0;
@@ -11,15 +13,16 @@
         width: 100%;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
+        height: 100px;
+        overflow: hidden;
         .left{
+            height: 100%;
             img{
                 height: 100%;
-                width: 100px;
-                object-fit: cover;
-                border-bottom-left-radius: 20px;
             }
         }
         .right{
+            color: white;
             h1{
                 margin-left: 20px;
                 color: $cor-secundaria;
@@ -34,9 +37,15 @@
     }
 }
 
-@media (max-width: 400px)  {
-           
-    .infos{
-        width: 100%;
-    }
+@media only screen and (max-width: 600px) {
+      :host{
+        margin: 0 auto;
+        width: 99%;
+        .infos{
+            padding: 0;
+            border: 1px solid $cor-secundaria;
+            
+        }
+      }     
+    
 }

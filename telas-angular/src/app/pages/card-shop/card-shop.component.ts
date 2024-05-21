@@ -1,11 +1,12 @@
   import { Component } from '@angular/core';
   import { LocalStorageService } from '../../services/localstorage.service';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
   @Component({
     selector: 'app-card-shop',
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule, RouterLink],
     templateUrl: './card-shop.component.html',
     styleUrl: './card-shop.component.scss'
   })

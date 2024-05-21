@@ -4,6 +4,7 @@
     width: 100%;
     position: fixed;
     bottom: 0;
+    
     button{
         display: flex;
         width: 100%;
@@ -13,6 +14,7 @@
         align-items: center;
         font-size: 1.5rem;
         font-weight: bold;
+        color: white;
         cursor: pointer;
     }
     button:active {
@@ -21,14 +23,13 @@
     }
 }    
 
-@media (max-width: 400px) {
+@media only screen and (max-width: 600px) {
     :host{
         width: 100%;
-
+        button{
+            font-size: 1.3rem;
+        }
     }
-    button {
-        width: 100%;
-        
-    }
+    
 }
 

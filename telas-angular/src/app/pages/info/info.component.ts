@@ -17,12 +17,11 @@ import { CardShopComponent } from '../card-shop/card-shop.component';
 })
 export class InfoComponent implements OnInit {
   id:string = '';
-
-  produtos:Produtos[] = [];
+  produtos:Produtos[] = []
 
   constructor(private route: ActivatedRoute, private ProdutosService: ProdutosService, private LocalStorageService: LocalStorageService) 
   {
-
+    
   }
 
   ngOnInit(): void {
@@ -32,7 +31,7 @@ export class InfoComponent implements OnInit {
       //usa o parametro que foi passado na url para buscar o objeto
     })
   }
-
+  
   obterProduto() {
     this.ProdutosService.GetProdutoID(this.id)
     .subscribe(produtos => {
@@ -41,7 +40,7 @@ export class InfoComponent implements OnInit {
     });
   };
 
-  adicionarId(id: string){
+  adicionar(id: string){
     this.LocalStorageService.adicionarId(id);
   }
   

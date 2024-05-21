@@ -17,7 +17,6 @@ export class UsuarioService {
       return this.http.get<Usuario[]>(url);
     }
    
-
     GetUsuarioID(IdProduto: string) {
       const url = this.apiUrl + `/BuscarUsuarioPorID/${IdProduto}`;
       return this.http.get<Usuario[]>(url);

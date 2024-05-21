@@ -1,0 +1,15 @@
+<div class="left-card">
+    <img src="{{imagem}}" alt="error">
+</div>
+<div class="center-card">
+    <span class="produto">{{produto}}</span>
+    <span class="descricao">{{descricao}}</span>
+    
+</div>
+<div class="right-card">
+    <button class="subtração" (click)="subtrair(idProduto)">-</button>
+    <span class="contador">{{contador}}</span>
+    <button class="adicao" (click)="adicionar()">+</button>
+    <span class="preco">R$ : {{preco.toFixed(2)}}</span>
+</div>
+

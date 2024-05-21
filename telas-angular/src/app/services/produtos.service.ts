@@ -22,6 +22,11 @@ export class ProdutosService {
       const url = this.apiUrl + `/BuscarProdutosPorID/${IdProduto}`;
       return this.http.get<Produtos[]>(url);
     }
+
+    GetProdutoIdArray(IdProduto: string) {
+      const url = this.apiUrl + `/BuscarProdutosPorID/${IdProduto}`;
+      return this.http.get<Produtos[]>(url);
+    }
     
     GetProdutoNome(produto: string) {
       const url = this.apiUrl + `/BuscarProdutosPorNome/${produto}`;

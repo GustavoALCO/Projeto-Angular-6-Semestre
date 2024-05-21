@@ -10,10 +10,11 @@ import { Injectable } from '@angular/core';
     constructor() { }
   
     adicionarId(id: string) {
-      let idsSalvos = this.getId();
-      idsSalvos.push(id);
-      localStorage.setItem(this.chaveLocalStorage, JSON.stringify(idsSalvos));
-      
+      let idsSalvos: string[] = this.getId();
+      if (!idsSalvos.includes(id)) {
+        idsSalvos.push(id); 
+        localStorage.setItem(this.chaveLocalStorage, JSON.stringify(idsSalvos)); 
+      }
       if (idsSalvos.length === 1){
         location.reload()
       }
@@ -21,7 +22,17 @@ import { Injectable } from '@angular/core';
     getId(): string[] {
       return JSON.parse(localStorage.getItem(this.chaveLocalStorage) || '[]');
     }
-  
+    
+    removerId(id: string){
+      let idsSalvos: string[] = this.getId();
+      const index = idsSalvos.indexOf(id);
+      if (index !== -1) {
+      idsSalvos.splice(index, 1);
+      localStorage.setItem(this.chaveLocalStorage, JSON.stringify(idsSalvos)); 
+      location.reload()
+     }
+    }
+
     limparIds() {
       localStorage.removeItem(this.chaveLocalStorage);
     }

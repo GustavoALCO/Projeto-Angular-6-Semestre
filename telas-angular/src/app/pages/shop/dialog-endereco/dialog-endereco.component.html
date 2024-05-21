@@ -1,0 +1,8 @@
+<h1>Endereço de Entrega</h1>
+<input type="text" [(ngModel)]="endereco" placeholder="Digite seu endereço..." (input)="verificar()">
+<input type="number" [(ngModel)]="numero" placeholder="Digite o N° da sua casa..." (input)="verificar()">
+<input type="text" [(ngModel)]="complemento" placeholder="Digite o complemento..." (input)="verificar()">
+<div class="flex">
+    <button class="recuse" (click)="close()">Cancelar</button>
+    <button class="confirm" (click)="pagamento()" [disabled]="!camposPreenchidos">Avançar</button>
+</div>

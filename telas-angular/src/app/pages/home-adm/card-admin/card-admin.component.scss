@@ -1,0 +1,13 @@
+:host{
+    width: 250px;
+    height: 250px;
+    background-color: gray;
+    border-radius: 15px;
+    .card{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+}

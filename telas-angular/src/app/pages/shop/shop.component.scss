@@ -1,0 +1,100 @@
+@import '../../../assets/colors/colors.scss';
+
+:host{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $cor-primaria;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    .content{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 15px;
+        border: solid 2px $cor-secundaria;
+        background-color: $cor-primaria;
+        width: 80%;
+        height: 80%;
+        
+        mat-icon{
+            position: absolute;
+            margin-left: 15px;
+            margin-top: 15px;
+            color: $cor-secundaria;
+        }
+
+        h1{
+            text-align: center;
+        }
+        .list{
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            width: 80%;
+            height: 550px;
+            overflow-y: auto;
+            //Barra de rolagem lateral 
+            align-items: center;
+        }
+        .list::-webkit-scrollbar {
+            width: 8px; /* Largura da barra de rolagem */
+          }
+        .list::-webkit-scrollbar-thumb {
+            background-color: $cor-secundaria; /* Cor do botão da barra de rolagem */
+            border-radius: 4px; /* Raio de borda do botão da barra de rolagem */
+          }
+        .card-item {
+            margin-bottom: 10px;
+          }
+        .values{
+           margin-left: 80px; 
+           font-family: 'Times New Roman', Times, serif;
+           font-weight: bold;
+        }
+        .frete{
+            margin-bottom:10px ;
+            margin-left: 80px ;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+        button{
+            width: 100%;
+            height: 80px;
+            background-color: $cor-secundaria;
+            margin-top: auto;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+        button:active {
+            position: relative;
+            top: 1px;
+        }
+    }
+    @media only screen and (max-width: 600px)  {
+
+        .content{
+            width: 100%;
+            height: 99%;
+
+            .list{
+                width: 95%;
+                height: 75%;
+            }
+            .values{
+                margin-left: 20px; 
+                
+             }
+             .frete{
+                 margin-bottom:10px ;
+                 margin-left: 20px ;
+                 
+             }
+        }
+    }
+}
+
+
+
