@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit{
   }
 
   obterBebidas(){
-    this.ProdutosService.GetProdutoNome("teste")
+    this.ProdutosService.GetProdutoNome("123")
     .subscribe(produtosBebidas => this.produtosBebidas = produtosBebidas);
     }
 }

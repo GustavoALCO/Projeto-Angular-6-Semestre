@@ -67,12 +67,13 @@
             .Rigth-card{
                 display: flex;
                 width: 50%;
+                margin-right: 20px;
                 align-items: center;
                 img{
                     border-radius: 15px;
                     width: 100%;
                     height: 60%;
-                    object-fit: cover;
+                    
                 }
             }
         }
@@ -89,17 +90,19 @@
             .Left-card{
                 bottom: 0;
                 width: 90%;
-            }
-            .Left-card{
                 padding-top: 0px;
+                h1{
+                    font-size: 2rem;
+                 }
             }
             .Rigth-card{
                 display: flex;
                 position: relative;
                 width: 300px; 
                 height: 200px;
-                margin-top: 10px;
-                width: 99%;
+                width: 97%;
+                margin: 0 auto;
+                margin-bottom: 50px;
                 height: 330px;
                 overflow: hidden;
                 img{

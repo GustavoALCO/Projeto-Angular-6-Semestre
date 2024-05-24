@@ -1,0 +1,9 @@
+<div class="menu">
+    <input type="text" [(ngModel)]="produto" placeholder="Digite o nome do Produto..." (input)="required()">
+    <input type="text" [(ngModel)]="descricao"placeholder="Digite a descrição..." (input)="required()">
+    <input type="number" [(ngModel)]="preco"placeholder="Digite o preco..." (input)="required()">
+    <input type="file" (change)="onChange($event)" (input)="required()">
+    <button class="Cancelar">Cancelar</button>
+    <button class="botão"  [disabled]="!camposPreenchidos">Criar</button>
+    
+</div>

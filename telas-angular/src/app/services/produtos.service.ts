@@ -38,15 +38,27 @@ export class ProdutosService {
       return this.http.delete<Produtos[]>(url)
     }
 
-    PostProdutos(produto: string, descricao: string, preco: number){
+    PostProdutos(produto: string, descricao: string, preco: number, imagem: string){
       const url = this.apiUrl + `/CriarProdutos`;
-      const body ={
+      const body = {
+        imagem: imagem,
         produto: produto,
         descricao: descricao,
         preco: preco
-      }
-      return this.http.post<Produtos[]>(url,body);
+      };
+      // Realiza a solicitação POST e se inscreve na Observable retornada
+      return this.http.post<Produtos[]>(url, body).subscribe(
+        (response) => {
+          console.log('Produto criado com sucesso:', response);
+          // Faça qualquer manipulação adicional da resposta aqui, se necessário
+        },
+        (error) => {
+          console.error('Erro ao criar produto:', error);
+          // Lide com o erro adequadamente
+        }
+      );
     }
+    
 
     PutProdutos(Idprodutos: string, produtos: string, descricao: string, preco: number)
     {
