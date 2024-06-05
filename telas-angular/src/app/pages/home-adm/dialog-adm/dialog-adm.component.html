@@ -1,0 +1,4 @@
+<input type="text" placeholder="Digite o valor do Id do produto" [(ngModel)]="id" (input)="verificar()">
+<button class="Cancelar" (click)="close()">Cancelar</button>
+<button *ngIf="data.funcao === 'alterar'" class="Enviar" (click)="close()" routerLink="admin/alterarProduto/{{id}}" [disabled]="!camposPreenchidos">Alterar</button>
+<button *ngIf="data.funcao === 'deletar'" class="Enviar" (click)="deletar()"  [disabled]="!camposPreenchidos">Deletar</button>

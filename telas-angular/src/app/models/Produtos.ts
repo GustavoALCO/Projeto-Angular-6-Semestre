@@ -4,7 +4,6 @@ export interface Produtos{
     produto: string,
     descricao : string,
     preco : number 
-    contador: number;
 }
 export interface precoProdutos{
     contador: number;

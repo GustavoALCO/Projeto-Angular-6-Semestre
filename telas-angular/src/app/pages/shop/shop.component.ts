@@ -33,7 +33,8 @@ export class ShopComponent {
   constructor( private ProdutosService: ProdutosService,
      private localstorage: LocalStorageService,
       public dialog: MatDialog,
-      private contadoreService: ContadorService){
+      private contadoreService: ContadorService
+    ){
 
   }
 

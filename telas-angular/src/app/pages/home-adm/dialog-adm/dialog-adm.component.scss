@@ -1,0 +1,39 @@
+:host{
+    color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto auto;
+
+        input{
+            border: solid  1px black;
+            width: 300px;
+            height: 40px;
+            padding: 5px;
+            border-radius: 15px;
+        }
+        .Enviar{
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            width: 100px;
+            right: 0;
+            margin: 0 110px 50px 0px;
+            bottom: 0;
+            padding: 10px;
+            background-color: rgb(0, 128, 255);
+            border-radius: 15px;
+        }
+        .Cancelar{
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            width: 100px;
+            left: 0;
+            margin: 0 0px 50px 110px;
+            bottom: 0;
+            padding: 10px;
+            background-color: rgb(116, 117, 119);
+            border-radius: 15px;
+        }
+}

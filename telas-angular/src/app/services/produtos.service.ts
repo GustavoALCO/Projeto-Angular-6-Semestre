@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Produtos } from '../models/Produtos';
+import { response } from 'express';
+import { error } from 'console';
 @Injectable({
   providedIn: 'root'
 })
@@ -38,7 +40,7 @@ export class ProdutosService {
       return this.http.delete<Produtos[]>(url)
     }
 
-    PostProdutos(produto: string, descricao: string, preco: number, imagem: string){
+    PostProdutos(produto: string[], descricao: string[], preco: number[], imagem: string[]){
       const url = this.apiUrl + `/CriarProdutos`;
       const body = {
         imagem: imagem,
@@ -50,7 +52,7 @@ export class ProdutosService {
       return this.http.post<Produtos[]>(url, body).subscribe(
         (response) => {
           console.log('Produto criado com sucesso:', response);
-          // Faça qualquer manipulação adicional da resposta aqui, se necessário
+          // retorna que o produto foi criado com sucesso
         },
         (error) => {
           console.error('Erro ao criar produto:', error);
@@ -60,14 +62,22 @@ export class ProdutosService {
     }
     
 
-    PutProdutos(Idprodutos: string, produtos: string, descricao: string, preco: number)
+    PutProdutos(Idprodutos: string, produtos: string[], descricao: string[], preco: number[],imagem:string[])
     {
       const url = this.apiUrl + `/AlterarProduto/${Idprodutos}`;
       const body = {
         produtos: produtos,
         descricao: descricao,
-        preco: preco
+        preco: preco,
+        imagem: imagem
       }
-      return this.http.put<Produtos[]>(url,body)
+      return this.http.put<Produtos[]>(url,body). subscribe(
+        (response) => {
+          console.log('Produto Alterado com Sucesso:', response);
+        },
+        (error) => {
+          console.error('Erro ao criar produto:', error);
+        }
+      )
     }
 }

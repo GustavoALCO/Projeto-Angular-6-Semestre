@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-card-admin',
   standalone: true,
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './card-admin.component.html',
   styleUrl: './card-admin.component.scss'
 })

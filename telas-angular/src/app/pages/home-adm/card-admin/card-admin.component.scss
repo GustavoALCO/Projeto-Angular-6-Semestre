@@ -4,12 +4,10 @@
     height: 40%;
     background-color: rgba(128, 128, 128, 0.549);
     border-radius: 15px;
-    a{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;   
         .imagem{
             margin: auto 0;
             width: 70%;
@@ -24,4 +22,3 @@
             font-weight: bold;
         }
     }
-}
