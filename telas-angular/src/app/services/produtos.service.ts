@@ -37,7 +37,9 @@ export class ProdutosService {
     
     DeleteProdutoID(IdProduto:string){
       const url = this.apiUrl + `/DeletarProdutosPor/${IdProduto}`;
-      return this.http.delete<Produtos[]>(url)
+      return this.http.delete<Produtos[]>(url).subscribe(
+        (response)=> console.log("usuario excluido Com sucesso")
+      )
     }
 
     PostProdutos(produto: string[], descricao: string[], preco: number[], imagem: string[]){
@@ -49,16 +51,18 @@ export class ProdutosService {
         preco: preco
       };
       // Realiza a solicitação POST e se inscreve na Observable retornada
-      return this.http.post<Produtos[]>(url, body).subscribe(
+      return this.http.post<Produtos[]>(url, body)
+      
+      .subscribe(
         (response) => {
           console.log('Produto criado com sucesso:', response);
           // retorna que o produto foi criado com sucesso
         },
         (error) => {
-          console.error('Erro ao criar produto:', error);
-          // Lide com o erro adequadamente
+          console.error('Erro ao criar produto:', error);  
         }
       );
+
     }
     
 
@@ -71,13 +75,17 @@ export class ProdutosService {
         preco: preco,
         imagem: imagem
       }
-      return this.http.put<Produtos[]>(url,body). subscribe(
-        (response) => {
-          console.log('Produto Alterado com Sucesso:', response);
-        },
-        (error) => {
-          console.error('Erro ao criar produto:', error);
-        }
-      )
+      return this.http.put<Produtos[]>(url,body)
+
+      //Subscribe para retronar o produto no console 
+
+      // . subscribe(
+      //   (response) => {
+      //     console.log('Produto Alterado com Sucesso:', response);
+      //   },
+      //   (error) => {
+      //     console.error('Erro ao criar produto:', error);
+      //   }
+      // )
     }
 }

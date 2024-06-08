@@ -6,6 +6,7 @@ import { ProdutosService } from '../../services/produtos.service';
 import { Produtos } from '../../models/Produtos';
 import { CommonModule} from '@angular/common';
 import { Observable, of } from 'rxjs';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-list-adm',
@@ -15,11 +16,13 @@ import { Observable, of } from 'rxjs';
     MatListModule,
     MatDividerModule,
     MatTableModule,
+    FormsModule
   ],
   templateUrl: './list-adm.component.html',
   styleUrl: './list-adm.component.scss'
 })
 export class ListAdmComponent {
+  nome!:string
   displayedColumns: string[] = ['idProduto', 'produto', 'descricao', 'preco'];
   Listaprodutos!: Produtos[];
   dataSource = new MatTableDataSource<Produtos>();
@@ -43,6 +46,19 @@ export class ListAdmComponent {
       });
   }
   
+  buscarProduto(){
+    if(this.nome === ''){
+      this.obterProdutos();
+    }
+    else{
+      this.produtosServices.GetProdutoNome(this.nome)
+      .subscribe(produto =>
+         {this.Listaprodutos = produto
+          this.dataSource.data = this.Listaprodutos;
+         });
+    }
+  }
+
   clickColuna(row:any){
     //console.log('Row clicked: ', row);
     this.listTrue();

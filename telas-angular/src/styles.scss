@@ -2,10 +2,25 @@
 
 
 *{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
     padding: 0px;
     border: 0;
     text-decoration: none;
+    
+   
 }
 
+.topshape {
+    background: linear-gradient(135deg, $cor-secundaria, $cor-primaria);
+    transform: translate(-20%, -40%);
+    height: 900px;
+    width: 900px;
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    z-index: 0;
+    position: fixed;
+}

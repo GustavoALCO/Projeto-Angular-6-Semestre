@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../models/Usuario';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -30,7 +31,8 @@ export class UsuarioService {
     GetLogin(email: string, senha: string)
     {
         const url = this.apiUrl + `/VerificarLogin/${email}/${senha}`
-        return this.http.get(url, {observe: 'response'})
+        return this.http.get(url, {observe: 'response'}
+        )
     }
     
     DeleteUsuarioID(IdProduto:string){

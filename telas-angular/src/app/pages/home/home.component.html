@@ -1,5 +1,6 @@
 
-  <app-header></app-header>
+<app-header></app-header>
+  <div class="topshape"></div>
   <div class="background">  
     <h1>Pizzas</h1>
   
@@ -10,7 +11,7 @@
           imagem = {{produto.imagem}}
           produto = {{produto.produto}}
           descricao = {{produto.descricao}}
-          preco = {{produto.preco}}>
+          preco = {{produto.preco.toFixed(2)}}>
         </app-card>
       </a>
         
@@ -24,10 +25,9 @@
           imagem="{{produto.imagem}}"
           produto="{{produto.produto}}"
           descricao="{{produto.descricao}}"
-          preco="{{produto.preco}}">
+          preco="{{produto.preco.toFixed(2)}}">
         </app-card>
       </a>
     </div>
   </div>
  
-  <app-card-shop></app-card-shop>

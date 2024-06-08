@@ -31,12 +31,12 @@ export class HomeComponent implements OnInit{
   }
 
   obterPizzas(){
-  this.ProdutosService.GetProdutoNome("excluir")
+  this.ProdutosService.GetProdutoNome("pizza")
   .subscribe(produtosPizza => this.produtosPizza = produtosPizza);
   }
 
   obterBebidas(){
-    this.ProdutosService.GetProdutoNome("123")
+    this.ProdutosService.GetProdutoNome("refrigerante")
     .subscribe(produtosBebidas => this.produtosBebidas = produtosBebidas);
     }
 }

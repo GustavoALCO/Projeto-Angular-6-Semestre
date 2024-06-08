@@ -1,5 +1,6 @@
 <app-header></app-header>
 
+<div class="topshape"></div>
 <div class="Card" *ngFor="let produto of produtos">
     <div class="Left-card">
         <h1>
@@ -9,7 +10,7 @@
             Ingredientes : {{produto.descricao}}
         </span>
         <span class="preco">
-            R$: {{produto.preco}}
+            R$: {{produto.preco.toFixed(2)}}
         </span>
         <button (click)="adicionar(produto.idProduto)">
             Comprar
@@ -19,5 +20,3 @@
         <img src="{{produto.imagem}}" alt="{{produto.imagem}}">
     </div>
 </div>
-
-<app-card-shop></app-card-shop>

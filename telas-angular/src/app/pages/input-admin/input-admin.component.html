@@ -1,11 +1,15 @@
 <div class="menu" *ngFor="let produto of produtos">
-        <input type="text" [(ngModel)]="titulo" placeholder="{{produto.produto}}" (input)="required()">
-        <input type="text" [(ngModel)]="descricao"placeholder="{{produto.descricao}}" (input)="required()">
-        <input type="number" [(ngModel)]="preco"placeholder="{{produto.preco}}" (input)="required()">
-        <input type="file" (change)="onChange($event)" (input)="required()">
-        
-        <button class="Cancelar" routerLink="/admin">Cancelar</button>
-        <button *ngIf="rotaAtual === 'criarProduto'" class="botão" [disabled]="!camposPreenchidos" (click)="postProdutos()">Criar</button>
-        <button *ngIf="rotaAtual === 'alterarProduto'" class="botão" [disabled]="!camposPreenchidos" (click)="putProdutos()">Alterar</button>
-
+        <div class="left-card">
+                <img src="{{foto ||produto.imagem}} " alt="">
+        </div>
+        <div class="right-card">
+                <input type="text" [(ngModel)]="titulo" placeholder="{{produto.produto}}" (input)="required()">
+                <input type="text" [(ngModel)]="descricao"placeholder="{{produto.descricao}}" (input)="required()">
+                <input type="number" [(ngModel)]="preco"placeholder="{{produto.preco}}" (input)="required()">
+                <input type="file" (change)="onChange($event)" (input)="required()">
+                
+                <button class="Cancelar" routerLink="/admin">Cancelar</button>
+                <button *ngIf="rotaAtual === 'criarProduto'" class="botão" [disabled]="!camposPreenchidos" (click)="postProdutos()">Criar</button>
+                <button *ngIf="rotaAtual === 'alterarProduto'" class="botão" [disabled]="!camposPreenchidos" (click)="putProdutos()">Alterar</button>
+        </div>
 </div>

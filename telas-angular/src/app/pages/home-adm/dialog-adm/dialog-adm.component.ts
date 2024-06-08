@@ -33,7 +33,7 @@ export class DialogAdmComponent {
   deletar()
   {
     this.ProdutosService.DeleteProdutoID(this.id)
-    alert(`Usuario ${this.id} Foi excluido`)
+    alert(`Produto ${this.id} Foi excluido`)
     this.dialogRef.close()
   }
   close(){
