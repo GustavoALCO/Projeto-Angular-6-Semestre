@@ -1,53 +1,158 @@
 @import '../../../assets/colors/colors.scss';
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+
 
 :host{
-    display: flex; 
-    flex-direction: column; 
-    width: 100%; 
-    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
     background-color: $cor-primaria;
-    align-items: center;
-    
-        .background{
-            display: flex;
-            flex-direction: column; 
-            background-color: $cor-primaria;
-            width: 800px;
-            margin-top: 20px ;
-            align-items: center;
-            padding-bottom: 25px;
-            border: solid 2px $cor-secundaria;
-            border-radius: 20px;
-            box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.66);
-            margin-bottom: 100px;
-            z-index: 1;
-            h1{
-                display: flex;
-                padding-top: 15px;
-                font-size: 2.5rem;
-                color: $cor-secundaria;
-                text-shadow: 2px 2px black;
-            }
-            
-            app-card:active{
-                    position: relative;
-                    top: 1.5px;
-            }
-        }    
-        
 
-        @media (max-width: 850px)  {
-           
-            .infos{
-                width: 100%;
+    .conteudo{
+        display: flex;
+        justify-content: space-between;
+        z-index: 1;
+        display: flex; 
+        height: 100%;
+        width: 100%;
+        .left{
+            text-align: center;
+            
+            h1{
+                margin-top: 190px;
+                margin-left: 100px;
+                font-size: 6rem;
+                font-family: "Ma Shan Zheng", cursive;
+                font-weight: 400;
+                font-style: normal;
+                color: white;
             }
-            .background{
-                width: 98%;
-                box-shadow: 0px 0px 0px 0px;
-                
+            h2{
+                color: white;
+                font-size: 2.5rem;
+                margin-left: 100px;
+                margin-top: 100px;
+                span{
+                    font-weight: bold;
+                    color: $cor-secundaria;
+                }
+            }
+            button{
+                border-radius: 15px;
+                margin-left: -60px;
+                width: 150px;
+                height: 50px;
+                background-color: $cor-secundaria;
+                color: white;
+                font-size: 1.3rem;
+                cursor: pointer;
+            }
+            button:active{
+                position: relative;
+                top:1.5px
+            }
+            .number{
+                position: relative;
+                bottom: 45px;
+                left: 215px;
+                width: 300px;
+                height: 50px; 
+                img{
+                    background-color: white;
+                    border-radius: 15px;
+                    padding: 5px;
+                    height: 35px;
+                    width: 35px;
+                }
+                span{
+                    position: relative;
+                    bottom: 17px;
+                    padding-left: 10px;
+                    color: white;
+                    font-weight: bold;
+                    font-size: 1rem;
+                }
             }
         }
-
-  
-        
+        .right{
+           
+            margin: auto 0;
+            .container{
+                border-top-left-radius: 200px;
+                border-bottom-left-radius: 35px;
+                height: 450px;
+                width: 600px;
+                background-color: $cor-secundaria;
+                img{
+                    position: relative;
+                    bottom: 180px;
+                    left: 120px;
+                    width: 450px;
+                    height: 450px;
+                }
+                .card{
+                    position: relative;
+                    bottom: 210px;
+                    left: 120px;
+                    border-radius: 15px;
+                    width: 400px;
+                    height: 200px;
+                    background-color: white;
+                    .top{
+                        display: flex;
+                        border-radius: 15px;
+                        height: 70px;
+                        background-color: rgb(230, 230, 13);
+                        justify-content: center;
+                        align-items: center;
+                        
+                    }
+                    .bottom{
+                        display: flex;
+                        flex-direction: column;
+                        height: 130px;
+                        gap: 20px;
+                        .titulo{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            h1{
+                                margin: 0 auto;
+                                font-weight: bold;
+                                font-size: 1.5rem;
+                            }
+                        }
+                        .preco{
+                            
+                            width: 100%;
+                            h2{
+                                margin-top: 5px;
+                                margin-left: 10px;
+                                font-weight: bold;
+                                font-size: 2rem;
+                            }
+                            button{
+                                position: relative;
+                                border-radius: 15px;
+                                left: 200px;
+                                bottom: 55px;
+                                width: 150px;
+                                height: 50px;
+                                right: 100px;
+                                background-color: $cor-secundaria;
+                                font-size: 1.6rem;
+                                font-weight: bold;
+                                color: white;
+                            }
+                            button:active{
+                                
+                                bottom: 53px;
+                            }
+                        }  
+                    }
+                }
+            }
+        }
+    }
 }

@@ -5,9 +5,7 @@
    
     z-index: 1;
     
-    .infos{
-        justify-content: space-between;
-        display: flex; 
+    .infos{ 
         border-bottom: 2px solid $cor-secundaria;
         top: 0;
         background-color: $cor-primaria;
@@ -15,29 +13,38 @@
         height: 100%;
         overflow: hidden;
         height: 100px;
+        display: flex;
+        justify-content: space-around;
+
         .left{
             height: 100%;
             padding-left: 30px;
             width: 200px;
+            
             img{
                 height: 100%;
             }
+            
+            
         }   
         .center{
             display: flex;
+            gap: 320px;
             margin: auto 0;
-            gap: 250px;
+            
             span{
                 color: white;
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
         }
         .right{
             display: flex;
             color: white;
             margin: auto 0;
-            width: 200px;
+            width: 150px;
             height: 100%;
+            justify-content: center;
+            
             app-card-shop{
                 margin:  auto 0;
             }
@@ -47,14 +54,32 @@
 }
 
 @media only screen and (max-width: 600px) {
-      :host{
+    :host {
         margin: 0 auto;
-        width: 99%;
-        .infos{
-            padding: 0;
-            border: 1px solid $cor-secundaria;
-            
-        }
-      }     
+        width: 100%;
     
+        .infos{
+            .left{
+                display: flex;
+                padding-left: 0px;
+                margin: auto 0;
+                width: 70px;
+                height: 70px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .center{
+                gap: 15px;
+                span{
+                    color: white;
+                    font-size: 0.9rem;
+                }
+            }
+            .right{
+                width: 40px;
+            }
+        }
+    }
 }

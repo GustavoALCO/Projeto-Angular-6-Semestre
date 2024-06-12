@@ -1,0 +1,33 @@
+
+<app-header></app-header>
+  <div class="topshape"></div>
+  <div class="background">  
+    <h1>Pizzas</h1>
+  
+    <div *ngFor="let produto of produtosPizza">
+      <a routerLink="/produto/{{produto.idProduto}}">
+        <app-card 
+          idProduto = {{produto.idProduto}}
+          imagem = {{produto.imagem}}
+          produto = {{produto.produto}}
+          descricao = {{produto.descricao}}
+          preco = {{produto.preco.toFixed(2)}}>
+        </app-card>
+      </a>
+        
+
+    </div>
+    <h1>Bebidas</h1>
+    <div *ngFor="let produto of produtosBebidas">
+      <a routerLink="/produto/{{produto.idProduto}}">
+        <app-card 
+          idProduto="{{produto.idProduto}}"
+          imagem="{{produto.imagem}}"
+          produto="{{produto.produto}}"
+          descricao="{{produto.descricao}}"
+          preco="{{produto.preco.toFixed(2)}}">
+        </app-card>
+      </a>
+    </div>
+  </div>
+ 

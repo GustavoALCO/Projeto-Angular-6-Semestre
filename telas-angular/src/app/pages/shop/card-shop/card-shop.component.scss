@@ -4,21 +4,21 @@
     display: flex;
     color: #fff;
     width: 700px;
-    height: 150px;
+    height: 170px;
     margin-top: 15px;
     border-radius: 5px;
     border: solid 1px $cor-secundaria;
     position: relative;
     overflow: hidden;
-    background-color: rgb(40, 38, 39);
+    background-color: rgba(40, 38, 39, 0.221);
     font-weight: bold;
     .left-card{
         width:200px;
-        height: 150px;
+        
         img{
             height: 100%;
             width: 100%;
-            background-attachment: fixed;
+            
         }
     }
     .center-card{
@@ -48,7 +48,7 @@
             bottom: 0;
             font-size: 1.2rem;
             padding-bottom: 10px;
-            font-family: 'Times New Roman', Times, serif;
+            
         }
         .subtração {
             display: flex;
@@ -80,33 +80,44 @@
         }
     }
     @media only screen and (max-width: 600px)  {
-        width: 400px;
-        height: 130px;
+        width: 300px;
+        height: 110px;
         margin: 0 auto;
         .left-card{
             
             width: 150px;
-            img{
-                height: 100%;
+            
+        }
+        .center-card{
+            .produto{
+                font-size: 1rem;
+            }
+            .descricao{
+                font-size: 0.7rem;
+                word-spacing: pre-line;
+                overflow: hidden; 
+                text-overflow: ellipsis;
             }
         }
         .right-card{
             width: 100px;
-            
+            margin-left: 0px;
             .subtração{
-                padding: 5px;
+                padding: 3px;
                 font-size: 0.8rem;
+                
             }
             .adicao{
-                padding: 5px;
+                padding: 3px;
                 font-size: 0.8rem;
             }
             .contador{
-                padding: 2px;
-                font-size: 0.8rem;
+                padding: 1px;
+                font-size: 0.6rem;
             }
             .preco{
-                font-size: 0.8rem;
+                font-size: 0.7rem;
+                padding-bottom: 0;
             }
         }
     }

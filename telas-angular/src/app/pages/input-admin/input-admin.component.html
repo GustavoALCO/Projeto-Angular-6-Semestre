@@ -8,7 +8,7 @@
                 <input type="number" [(ngModel)]="preco"placeholder="{{produto.preco}}" (input)="required()">
                 <input type="file" (change)="onChange($event)" (input)="required()">
                 
-                <button class="Cancelar" routerLink="/admin">Cancelar</button>
+                <button class="Cancelar" routerLink="/admin/home">Cancelar</button>
                 <button *ngIf="rotaAtual === 'criarProduto'" class="botão" [disabled]="!camposPreenchidos" (click)="postProdutos()">Criar</button>
                 <button *ngIf="rotaAtual === 'alterarProduto'" class="botão" [disabled]="!camposPreenchidos" (click)="putProdutos()">Alterar</button>
         </div>

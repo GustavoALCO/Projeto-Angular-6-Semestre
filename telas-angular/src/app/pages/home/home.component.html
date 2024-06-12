@@ -1,33 +1,43 @@
-
 <app-header></app-header>
-  <div class="topshape"></div>
-  <div class="background">  
-    <h1>Pizzas</h1>
-  
-    <div *ngFor="let produto of produtosPizza">
-      <a routerLink="produto/{{produto.idProduto}}">
-        <app-card 
-          idProduto = {{produto.idProduto}}
-          imagem = {{produto.imagem}}
-          produto = {{produto.produto}}
-          descricao = {{produto.descricao}}
-          preco = {{produto.preco.toFixed(2)}}>
-        </app-card>
-      </a>
-        
+<div class="topshape">
+</div>
+<div class="conteudo">
 
+  <div class="left">
+
+    <h1>Dom <br><br><br>Grudento</h1>
+
+    <h2>A mais saborosa<br>
+
+    <span>Pizza</span> da Região</h2>
+
+    <button>Ver Cardápio</button>
+
+    <div class="number">
+
+      <img src="https://i.pinimg.com/originals/81/45/bd/8145bd48b6b0593d01d69d499d2a1f8f.png" alt="">
+      <span>(11) 94025-0807</span>
     </div>
-    <h1>Bebidas</h1>
-    <div *ngFor="let produto of produtosBebidas">
-      <a routerLink="produto/{{produto.idProduto}}">
-        <app-card 
-          idProduto="{{produto.idProduto}}"
-          imagem="{{produto.imagem}}"
-          produto="{{produto.produto}}"
-          descricao="{{produto.descricao}}"
-          preco="{{produto.preco.toFixed(2)}}">
-        </app-card>
-      </a>
+
+  </div>
+
+  <div class="right">
+    <div class="container">
+       <img src="../../../assets/images/file.png" alt="">
+       <div class="card">
+        <div class="top">
+          <h1>Promoção</h1>
+        </div>
+        <div class="bottom">
+          <div class="titulo">
+            <h1>Pizza Malagueta + coca cola 2L</h1>
+          </div>
+          <div class="preco">
+            <h2>R$ 42.00</h2>
+            <button (click)="adicionar()">Peça Já</button>
+          </div>
+        </div>
+       </div>
     </div>
   </div>
- 
+</div>

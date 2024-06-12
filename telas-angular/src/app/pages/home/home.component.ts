@@ -1,42 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { ProdutosService } from '../../services/produtos.service';
-import { Produtos } from '../../models/Produtos';
-import { CommonModule } from '@angular/common';
-import { CardComponent } from './card/card.component';
-import { RouterLink } from '@angular/router';
+import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
-import { CardShopComponent } from '../card-shop/card-shop.component';
+import { LocalStorageService } from '../../services/localstorage.service';
+
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, CardComponent, RouterLink, HeaderComponent, CardShopComponent],
+  imports: [HeaderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent{
 
-  produtosPizza:Produtos[] = [];
-  produtosBebidas:Produtos[] = [];
-  
-
-  constructor( private ProdutosService: ProdutosService){
+  constructor(private localStorage:LocalStorageService){
 
   }
-
-  ngOnInit(): void {
-    this.obterPizzas(),
-    this.obterBebidas()
+ 
+  adicionar(){
+    this.localStorage.adicionarId("35e111ec-cc52-415d-a489-9ccc4db76d2e")
   }
-
-  obterPizzas(){
-  this.ProdutosService.GetProdutoNome("pizza")
-  .subscribe(produtosPizza => this.produtosPizza = produtosPizza);
-  }
-
-  obterBebidas(){
-    this.ProdutosService.GetProdutoNome("refrigerante")
-    .subscribe(produtosBebidas => this.produtosBebidas = produtosBebidas);
-    }
+ 
 }

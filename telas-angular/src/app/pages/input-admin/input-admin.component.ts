@@ -126,9 +126,11 @@ export class InputAdminComponent {
 
   postProdutos(){
     this.serviceProdutos.PostProdutos(this.titulo, this.descricao, this.preco , this.base64)
+    alert(`Produto de Criado\n Titulo: ${this.titulo}\n Descrição: ${this.descricao}\n Preco: ${this.preco}`)
   }
 
   putProdutos(){
     this.serviceProdutos.PutProdutos(this.id, this.titulo, this.descricao, this.preco , this.base64)
+    alert(`Produto de Alterado\n Titulo: ${this.titulo}\n Descrição: ${this.descricao}\n Preco: ${this.preco}`)
   }
 }

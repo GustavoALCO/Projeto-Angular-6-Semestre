@@ -48,7 +48,7 @@ export class DialogEnderecoComponent {
       const produtosDetails = this.produtos.map(produto => {
         const contador = this.contadorService.obterContadorId(produto.idProduto);
         
-          return `${contador} ${produto.produto}: Ingredientes: ${produto.descricao}\n`;
+          return `${contador} ${produto.produto}\n 𝐈𝐧𝐠𝐫𝐞𝐝𝐢𝐞𝐧𝐭𝐞𝐬: ${produto.descricao}\n 𝐏𝐫𝐞ç𝐨: ${produto.preco.toFixed(2)}\n\n`;
         
     });
   
@@ -56,7 +56,15 @@ export class DialogEnderecoComponent {
       const produtosDetailsString = produtosDetails.join(', ');
   
        
-      const mensagem = `Novo Pedido\n\nValor a Pagar: ${this.data.vf.toFixed(2)}\n\nProdutos:\n${produtosDetailsString}\n\n------------------------------------------------------\n\nEndereço = ${this.endereco}\nN° = ${this.numero}\nComplemento = ${this.complemento}`;
+      const mensagem = `
+\n-------------𝐏𝐢𝐳𝐳𝐚𝐫𝐢𝐚 𝐃𝐨𝐦 𝐆𝐫𝐮𝐝𝐞𝐧𝐭𝐨-------------\n
+𝗡𝗼𝘃𝗼 𝗣𝗲𝗱𝗶𝗱𝗼\n\n\
+ 𝙋𝙧𝙤𝙙𝙪𝙩𝙤𝙨:${produtosDetailsString}
+------------------------------------------------------\n
+  𝐄𝐧𝐝𝐞𝐫𝐞ç𝐨 = ${this.endereco}\n
+  𝐍° = ${this.numero}\n
+  𝐂𝐨𝐦𝐩𝐥𝐞𝐦𝐞𝐧𝐭𝐨 = ${this.complemento}\n\n
+ 𝐕𝐚𝐥𝐨𝐫 𝐚 𝐏𝐚𝐠𝐚𝐫: ${this.data.vf.toFixed(2)}`;
   
       // Montar a URL com os detalhes dos produtos e o valor this.vf
       const url = `https://wa.me/+5511940250807?text=${encodeURIComponent(mensagem)}`;

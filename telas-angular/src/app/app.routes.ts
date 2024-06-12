@@ -7,18 +7,18 @@ import { InputAdminComponent } from './pages/input-admin/input-admin.component';
 import { ListAdmComponent } from './pages/list-adm/list-adm.component';
 import { LoginAdmComponent } from './pages/login-adm/login-adm.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
+import { CardapioComponent } from './pages/cardapio/cardapio.component';
 
 
 export const routes: Routes = [
-
-    {path: '', component: HomeComponent},
+    {path: '', component:HomeComponent},
+    {path: 'cardapio', component: CardapioComponent},
     {path: 'produto/:idProduto', component: InfoComponent},
     {path: 'shop', component: ShopComponent},
     {path: 'admin',component: LoginAdmComponent},
-    {path: 'nos',component: SobreComponent},
+    {path: 'nosa',component: SobreComponent},
     {path: 'admin/home',component: HomeAdmComponent},
     {path: 'admin/criarProduto',component:InputAdminComponent},
     {path: 'admin/alterarProduto/:idProduto',component:InputAdminComponent},
     {path: 'admin/listaProdutos', component: ListAdmComponent},
-    
 ];
