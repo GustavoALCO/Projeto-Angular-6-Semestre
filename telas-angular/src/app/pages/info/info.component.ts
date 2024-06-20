@@ -3,15 +3,16 @@ import { ActivatedRoute } from '@angular/router';
 import { Produtos } from '../../models/Produtos';
 import { ProdutosService } from '../../services/produtos.service';
 import { CommonModule } from '@angular/common';
-import {LocalStorageService} from '../../services/localstorage.service'
+
 import { HeaderComponent } from '../header/header.component';
-import { CardShopComponent } from '../card-shop/card-shop.component';
+
+import { StorageService } from '../../services/storage.service';
 
 
 @Component({
   selector: 'app-info',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, CardShopComponent],
+  imports: [CommonModule, HeaderComponent],
   templateUrl: './info.component.html',
   styleUrl: './info.component.scss',
 })
@@ -19,7 +20,7 @@ export class InfoComponent implements OnInit {
   id:string = '';
   produtos:Produtos[] = []
 
-  constructor(private route: ActivatedRoute, private ProdutosService: ProdutosService, private LocalStorageService: LocalStorageService) 
+  constructor(private route: ActivatedRoute, private ProdutosService: ProdutosService, private StorageService: StorageService) 
   {
     
   }
@@ -41,7 +42,7 @@ export class InfoComponent implements OnInit {
   };
 
   adicionar(id: string){
-    this.LocalStorageService.adicionarId(id);
+    this.StorageService.adicionarId(id);
   }
   
 }

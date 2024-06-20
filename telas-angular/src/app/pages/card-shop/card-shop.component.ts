@@ -1,5 +1,5 @@
   import { Component } from '@angular/core';
-  import { LocalStorageService } from '../../services/localstorage.service';
+  import { StorageService } from '../../services/storage.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -14,7 +14,7 @@ import { RouterLink } from '@angular/router';
 
     mostrarCarrinho: boolean = false;
 
-    constructor(private localStorageService: LocalStorageService) { }
+    constructor(private localStorageService: StorageService) { }
 
     ngOnInit(): void {
       if (this.localStorageService.getId().length > 0) {

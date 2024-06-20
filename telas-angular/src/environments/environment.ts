@@ -1,4 +1,4 @@
 export const environment = {
-    Apiurl:"https://api-projeto.azurewebsites.net/api"
+    Apiurl:"https://localhost:7052"
     //Configurando o Http da APi que deseja ser consumida
 };
