@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output, output} from '@angular/core';
-import { LocalStorageService } from '../../../services/localstorage.service';
+import { StorageService } from '../../../services/storage.service';
 import { get } from 'http';
 
 
@@ -36,7 +36,7 @@ export class CardShopComponent {
   @Output()
    contadorAtualizado = new EventEmitter<number>();
 
-  constructor(private localstorage: LocalStorageService){
+  constructor(private storage: StorageService){
 
   }
   ngOnInit(): void {
@@ -61,7 +61,7 @@ export class CardShopComponent {
     this.precoFinal.emit(this.preco);
     
     if(this.contador < 1){
-      this.localstorage.removerId(id)
+      this.storage.removerId(id)
     }
   }
 

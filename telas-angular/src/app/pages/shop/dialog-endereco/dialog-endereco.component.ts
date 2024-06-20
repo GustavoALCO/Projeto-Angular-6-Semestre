@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { LocalStorageService } from '../../../services/localstorage.service';
+import { StorageService } from '../../../services/storage.service';
 import { ProdutosService } from '../../../services/produtos.service';
 import { Produtos } from '../../../models/Produtos';
 import { ContadorService } from '../../../services/contador.service';
@@ -22,7 +22,7 @@ export class DialogEnderecoComponent {
   
   constructor(
     public dialogRef: MatDialogRef<DialogEnderecoComponent>,
-    private localstorage: LocalStorageService,
+    private storage: StorageService,
     private ProdutosService: ProdutosService,
     private contadorService: ContadorService,
     @Inject(MAT_DIALOG_DATA) public data: any) {}
@@ -81,7 +81,7 @@ export class DialogEnderecoComponent {
 
   obterProdutos(): void {
     // Obter os IDs do Local Storage
-    const ids = this.localstorage.getId();
+    const ids = this.storage.getId();
   
     // Array para armazenar os produtos
     const produtosTemp: Produtos[] = [];
